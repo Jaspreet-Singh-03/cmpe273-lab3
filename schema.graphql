@@ -1,0 +1,23 @@
+type Query {
+  studentsList : [Student!]!
+  classesList : [Classes!]!
+  students( id : Int! ) : [Student!]!
+  classes( id : Int! ) : [Classes!]!
+}
+
+type Student {
+  id: Int!
+  name: String!
+}
+
+type Classes {
+  id : Int!
+  name : String!
+  students : [Student!]!
+} 
+
+type Mutation {
+  newStudent(name : String!): Student!
+  newClass (name: String!): Classes!
+  updateClass (class_id: Int! student_id: Int!): [Classes!]!
+}
